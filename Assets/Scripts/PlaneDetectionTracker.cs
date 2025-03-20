@@ -8,6 +8,7 @@ public class PlaneDetectionTracker : MonoBehaviour
     public event Action<ARPlane> OnScanningFinished; // Use C# event instead of UnityEvent
     private ARPlane detectedPlane;
     private bool scanConfirmed = false;
+    public Transform car;
     public float minimumRequiredPlaneSize = 0.5f;
 
     private void Awake()
@@ -59,6 +60,7 @@ public class PlaneDetectionTracker : MonoBehaviour
             scanConfirmed = true;
             Debug.Log("✅ Scanning confirmed! Invoking event.");
             OnScanningFinished?.Invoke(detectedPlane);
+            car.position = detectedPlane.center + Vector3.up;
         }
         else
         {
