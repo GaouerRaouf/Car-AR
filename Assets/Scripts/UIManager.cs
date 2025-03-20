@@ -30,5 +30,10 @@ public class UIManager : MonoBehaviour
         tab.SetActive(false);
     }
 
+    public void TogglePage(GameObject go)
+    {
+        go.SetActive(!go.activeInHierarchy);
+    }
+
 
 }
