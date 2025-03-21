@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7f0b5909045a840c0a77496e3714031c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/WebGLTemplates/iTrackerFree/targets/rocks.dat
+  uploadId: 629272

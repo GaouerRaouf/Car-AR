@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b89106f72907a4f4aa6578d1731a9b12
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/WebGLTemplates/iTrackerFree/targets/leaves.dat
+  uploadId: 629272

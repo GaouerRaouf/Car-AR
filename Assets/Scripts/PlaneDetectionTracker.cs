@@ -1,56 +1,54 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using System;
 
 public class PlaneDetectionTracker : MonoBehaviour
 {
+    private ARRaycastManager raycastManager;
     private ARPlaneManager planeManager;
-    public event Action<ARPlane> OnScanningFinished; // Use C# event instead of UnityEvent
+
+    public UnityEvent OnScanFinishEvent;
+    public event Action<ARPlane> OnScanningFinished;
+
     private ARPlane detectedPlane;
     private bool scanConfirmed = false;
     public Transform car;
     public float minimumRequiredPlaneSize = 0.5f;
 
+    private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+
     private void Awake()
     {
+        raycastManager = GetComponent<ARRaycastManager>();
         planeManager = GetComponent<ARPlaneManager>();
     }
 
-    private void OnEnable()
-    {
-        planeManager.planesChanged += OnPlanesChanged;
-    }
-
-    private void OnDisable()
-    {
-        planeManager.planesChanged -= OnPlanesChanged;
-    }
-
-    private void OnPlanesChanged(ARPlanesChangedEventArgs args)
+    private void Update()
     {
         if (scanConfirmed) return;
 
-        foreach (var plane in args.added)
-        {
-            if (CheckPlaneSize(plane)) return;
-        }
+        Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
 
-        foreach (var plane in args.updated)
+        if (raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon))
         {
-            if (CheckPlaneSize(plane)) return;
+            ARPlane plane = planeManager.GetPlane(hits[0].trackableId);
+            if (plane != null && plane != detectedPlane && CheckPlaneSize(plane))
+            {
+                detectedPlane = plane;
+                OnScanFinishEvent?.Invoke();
+                Debug.Log("✅ New plane detected!");
+            }
         }
     }
 
     private bool CheckPlaneSize(ARPlane plane)
     {
-        float planeArea = plane.extents.x * plane.extents.y;
-        if (planeArea >= minimumRequiredPlaneSize)
-        {
-            detectedPlane = plane;
-            Debug.Log("✅ Plane detected with area >= 0.5m²! Waiting for confirmation...");
-            return true;
-        }
-        return false;
+        Debug.Log("X size " + plane.size.x);
+        Debug.Log("Y size " + plane.size.y);
+        return plane.size.x >= minimumRequiredPlaneSize && plane.size.y >= minimumRequiredPlaneSize;
     }
 
     public void FinishScanning()

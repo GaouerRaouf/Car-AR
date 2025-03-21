@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4ed093621d8d342e9b74c757be4c323b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Scripts/ImageTracker.cs
+  uploadId: 629272

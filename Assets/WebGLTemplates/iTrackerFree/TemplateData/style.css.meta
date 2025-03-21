@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8c7da89d32d3d400592476ce7d35e085
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/WebGLTemplates/iTrackerFree/TemplateData/style.css
+  uploadId: 629272

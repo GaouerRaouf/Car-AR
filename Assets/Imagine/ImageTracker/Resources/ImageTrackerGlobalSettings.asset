@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35785f9acbb7427fb38a829e2ad8947, type: 3}
+  m_Name: ImageTrackerGlobalSettings
+  m_EditorClassIdentifier: 
+  imageTargetInfos:
+  - id: rocks
+    texture: {fileID: 2800000, guid: 8cb67b785d6664147b032d8cc2610817, type: 3}
+  - id: corals
+    texture: {fileID: 2800000, guid: 083211c5bd2eb48da95948bdd6b7004d, type: 3}
+  - id: leaves
+    texture: {fileID: 2800000, guid: 3bc5ccd416ca64ff3a0c78674c1ac3e5, type: 3}
+  - id: nebula
+    texture: {fileID: 2800000, guid: ae5171740d0564578bee515747d8b71f, type: 3}
+  - id: seashells
+    texture: {fileID: 2800000, guid: b8c2bed8dea4246fbbda153d0972d59b, type: 3}
+  - id: tree
+    texture: {fileID: 2800000, guid: 33fe257ef14eb43b8b8d5e5b0c979454, type: 3}
+  - id: castle
+    texture: {fileID: 2800000, guid: ccaffb90d00d948a79ea8aa1d9b697ff, type: 3}
+  - id: ladybugs
+    texture: {fileID: 2800000, guid: c95897c3f505c41a1b162db5f23a4d6e, type: 3}
+  defaultTrackerSettings:
+    trackingQuality: 1
+    targetFrameRate: 30
+    advancedSettings:
+      detectability: 40
+      trackedPoints: 25
+    debugMode: 0

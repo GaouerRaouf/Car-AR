@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2430b3f17d4da4255960f5e4dd8bc5b9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Demos/Materials/mat-red.mat
+  uploadId: 629272

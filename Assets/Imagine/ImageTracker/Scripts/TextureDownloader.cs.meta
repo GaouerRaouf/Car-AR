@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 38c6a3f223848480f8b5e5b26a324eac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Scripts/TextureDownloader.cs
+  uploadId: 629272

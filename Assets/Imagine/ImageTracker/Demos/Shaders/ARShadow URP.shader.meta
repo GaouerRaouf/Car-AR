@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 1f9818eba2a7f418881c7d5348b94dd3
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Demos/Shaders/ARShadow URP.shader
+  uploadId: 629272

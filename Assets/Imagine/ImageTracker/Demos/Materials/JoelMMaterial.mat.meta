@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 79f5b92beb25944808d9189bc71a2d72
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Demos/Materials/JoelMMaterial.mat
+  uploadId: 629272

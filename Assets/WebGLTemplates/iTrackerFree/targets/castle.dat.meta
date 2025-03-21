@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 78ccd75847ecc47c0aecee3b3d44f406
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/WebGLTemplates/iTrackerFree/targets/castle.dat
+  uploadId: 629272

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bef7e12f582b346e9878a98f5a723ada
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/Imagine/ImageTracker/Imagetargets/Meshes/genericMesh.asset
+  uploadId: 629272

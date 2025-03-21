@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b584e72f215f54867aa7b9c8c98aaa54
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246878
+  packageName: Imagine WebAR - Image Tracker Free
+  packageVersion: F.1.4.4
+  assetPath: Assets/WebGLTemplates/iTrackerFree/targets/corals.dat
+  uploadId: 629272
