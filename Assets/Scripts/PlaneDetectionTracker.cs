@@ -5,7 +5,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System;
 
-public class PlaneDetectionTracker : MonoBehaviour
+public class PlaneDetectionTracker : MonoBehaviour, IPausable
 {
     private ARRaycastManager raycastManager;
     private ARPlaneManager planeManager;
@@ -31,7 +31,6 @@ public class PlaneDetectionTracker : MonoBehaviour
         if (scanConfirmed) return;
 
         Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
-        if (detectedPlane != null) Debug.Log("Distance update: " + Vector3.Distance(car.position, detectedPlane.transform.position));
 
         if (raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon))
         {
@@ -43,6 +42,15 @@ public class PlaneDetectionTracker : MonoBehaviour
                 OnScanFinishEvent?.Invoke();
             }
         }
+    }
+
+    public void Pause()
+    {
+        enabled = false;
+    }
+    public void Unpause()
+    {
+        enabled = true;
     }
 
     private bool CheckPlaneSize(ARPlane plane)
@@ -59,25 +67,25 @@ public class PlaneDetectionTracker : MonoBehaviour
             scanConfirmed = true;
             Debug.Log("Scanning confirmed!");
 
-            
+
             Vector3 targetPosition = detectedPlane.transform.position + Vector3.up * 2f;
             Vector3 targetScale = new Vector3(1, 1, 1) * Math.Min(detectedPlane.size.x, detectedPlane.size.y) * 0.1f;
 
-            
+
             if (Physics.Raycast(targetPosition, Vector3.down, out RaycastHit hit, 5f))
             {
-                targetPosition = hit.point + Vector3.up * 0.1f; 
+                targetPosition = hit.point + Vector3.up * 0.1f;
             }
 
             // Change the car's position and scale to match the detected plane
             car.position = targetPosition;
-            car.localScale = targetScale; 
+            car.localScale = targetScale;
 
-            
+
             Rigidbody carRb = car.GetComponent<Rigidbody>();
             if (carRb != null)
             {
-                carRb.linearVelocity = Vector3.zero; 
+                carRb.linearVelocity = Vector3.zero;
                 carRb.angularVelocity = Vector3.zero;
             }
 
@@ -85,7 +93,7 @@ public class PlaneDetectionTracker : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("⚠ No valid plane detected to confirm scanning.");
+            Debug.LogWarning("No valid plane detected to confirm scanning.");
         }
     }
 
