@@ -1840,7 +1840,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_PlanePrefab: {fileID: 8403170749156842759, guid: f47bd01205a9852419638032d4003e06, type: 3}
-  m_DetectionMode: 1
+  m_DetectionMode: 5
 --- !u!114 &519187780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1868,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 519187779}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 519187781}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   car: {fileID: 1799683314}
   minimumRequiredPlaneSize: 0.5
 --- !u!114 &519187781
@@ -1877,7 +1901,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519187775}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1ea923db7b25694db06b6f40d62c968, type: 3}
   m_Name: 

@@ -31,6 +31,7 @@ public class PlaneDetectionTracker : MonoBehaviour
         if (scanConfirmed) return;
 
         Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        if (detectedPlane != null) Debug.Log("Distance update: " + Vector3.Distance(car.position, detectedPlane.transform.position));
 
         if (raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon))
         {
@@ -38,8 +39,8 @@ public class PlaneDetectionTracker : MonoBehaviour
             if (plane != null && plane != detectedPlane && CheckPlaneSize(plane))
             {
                 detectedPlane = plane;
+
                 OnScanFinishEvent?.Invoke();
-                Debug.Log("✅ New plane detected!");
             }
         }
     }
@@ -56,13 +57,36 @@ public class PlaneDetectionTracker : MonoBehaviour
         if (detectedPlane != null && !scanConfirmed)
         {
             scanConfirmed = true;
-            Debug.Log("✅ Scanning confirmed! Invoking event.");
+            Debug.Log("Scanning confirmed!");
+
+            
+            Vector3 targetPosition = detectedPlane.transform.position + Vector3.up * 2f;
+            Vector3 targetScale = new Vector3(1, 1, 1) * Math.Min(detectedPlane.size.x, detectedPlane.size.y) * 0.1f;
+
+            
+            if (Physics.Raycast(targetPosition, Vector3.down, out RaycastHit hit, 5f))
+            {
+                targetPosition = hit.point + Vector3.up * 0.1f; 
+            }
+
+            // Change the car's position and scale to match the detected plane
+            car.position = targetPosition;
+            car.localScale = targetScale; 
+
+            
+            Rigidbody carRb = car.GetComponent<Rigidbody>();
+            if (carRb != null)
+            {
+                carRb.linearVelocity = Vector3.zero; 
+                carRb.angularVelocity = Vector3.zero;
+            }
+
             OnScanningFinished?.Invoke(detectedPlane);
-            car.position = detectedPlane.center + Vector3.up;
         }
         else
         {
             Debug.LogWarning("⚠ No valid plane detected to confirm scanning.");
         }
     }
+
 }
